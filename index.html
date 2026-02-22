@@ -1,578 +1,270 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="light">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
+    <link rel="https://rb.gy/xcnrk4" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Yes We Can | نعم نسطتيع</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>SmartEdu AI | مساعد الدراسة الذكي</title>
+    <link rel="data:image/jpeg;base64,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" type="image/x-icon">
     <script>
-        tailwind.config = { darkMode: 'class' }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#2325c6', accent: '#bc1e1e', darkBg: '#0b0f1a' },
+                    backgroundImage: {'main-gradient': 'linear-gradient(135deg, #2325c6 0%, #bc1e1e 100%)'  },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'Tajawal', 'sans-serif'] }
+                }
+            }
+        }
+   
     </script>
     <style>
-        /* أهم جزء: منع السكرول الجانبي والـ Transition العالمي */
-        html, body { 
-            max-width: 100%; 
-            overflow-x: hidden; 
-            font-family: 'Cairo', sans-serif;
-            margin: 0; padding: 0;
-            transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        * { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .text-gradient { background: linear-gradient(135deg, #2325c6 0%, #bc1e1e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Grid Pattern Theme (Hero Section) */
+        .grid-pattern {
+            background-image: linear-gradient(to right, rgba(79, 79, 79, 0.1) 1px, transparent 1px), 
+                              linear-gradient(to bottom, rgba(79, 79, 79, 0.1) 1px, transparent 1px);
+            background-size: 14px 24px;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
         }
 
-        /* تأثير الدوائر المضيئة (الخلفية السينمائية) */
-        .blur-bg {
-            position: absolute;
-            width: 650px;
-            height: 650px;
-            border-radius: 50%;
-            filter: blur(130px);
-            z-index: -1;
-            pointer-events: none;
-            transition: opacity 0.8s ease, transform 1s ease-in-out;
-        }
-        .gold-glow { background: #e0a205f5; top: 5%; left: -15%; }
-        .red-glow { background: #ff0000; bottom: 5%; right: -15%; }
+        /* Distinct Patterns for other sections */
+        .pattern-pomodoro { background-image: radial-gradient(#e40000 1px, transparent 0.5px); background-size: 20px 20px; }
+        .pattern-techniques { background-image: radial-gradient(circle at center, #2325c6 1px, transparent 1px); background-size: 30px 30px; }
+        .pattern-schedule { background: repeating-linear-gradient(45deg, rgba(35, 37, 198, 0.02) 0, rgba(251, 213, 0, 0.195) 3px, transparent 0, transparent 15px); }
 
-        /* التحكم في شفافية الدوائر حسب المود */
-        .light .blur-bg { opacity: 0.12; }
-        .dark .blur-bg { opacity: 0.22; }
-
-        /* أنيميشن حركة الدوائر بـ Ease */
-        @keyframes floatGlow {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -30px) scale(1.05); }
-        }
-        .animate-float { animation: floatGlow 12s infinite ease-in-out; }
-
-        /* نصوص العناوين مع Transition ناعم */
-        h1, p, span, a, button {
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .rotate-icon { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        /* ستايل الناف بار الزجاجي */
-        .glass-nav {
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            transition: background-color 0.6s ease, border 0.6s ease;
-        }
-        html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* عشان السكشن ميبقاش مستخبي ورا الناف بار الثابت */
-}
+        @keyframes pulse-bg { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.05); } }
+        .animate-pulse-slow { animation: pulse-bg 10s infinite ease-in-out; }
     </style>
 </head>
-<body class="bg-[#fdfbf9] dark:bg-[#050505] text-zinc-900 dark:text-white transition-colors duration-500">
+<body class="bg-white dark:bg-darkBg text-slate-900 dark:text-white font-sans overflow-x-hidden">
 
-    <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] hidden opacity-0 transition-opacity duration-500"></div>
-    <div id="side-menu" class="fixed top-0 right-0 w-[300px] h-full bg-white dark:bg-zinc-900 z-[120] translate-x-full transition-transform duration-500 p-8 shadow-2xl border-l border-zinc-200 dark:border-zinc-800 overflow-y-auto">
-    <button id="close-btn" class="text-3xl mb-8 hover:rotate-90 transition-transform text-current">✕</button>
-    
-    <nav class="flex flex-col gap-4 text-right">
-    <a href="#roads-section" onclick="toggleMenu(false)" data-i18n="nav_roads" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">الطرق والكباري</a>
-    <a href="#capital-section" onclick="toggleMenu(false)" data-i18n="nav_capital" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">العاصمة الإدارية</a>
-    <a href="#suez-section" onclick="toggleMenu(false)" data-i18n="nav_suez" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">قناة السويس</a>
-    <a href="#terror-section" onclick="toggleMenu(false)" data-i18n="nav_terror" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">مكافحة الإرهاب</a>
-    <a href="#health-section" onclick="toggleMenu(false)" data-i18n="nav_health" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">الصحة</a>
-    <a href="#social-section" onclick="toggleMenu(false)" data-i18n="nav_social" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">التكافل الاجتماعي</a>
-    <a href="#education-section" onclick="toggleMenu(false)" data-i18n="nav_education" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">التعليم</a>
-    <a href="#transport-section" onclick="toggleMenu(false)" data-i18n="nav_transport" class="text-lg font-bold py-2 border-b border-zinc-100 dark:border-zinc-800 hover:text-red-600">النقل</a>
-</nav>
-</div>
-
-    <nav class="fixed top-0 w-full h-24 z-[100] glass-nav px-6 md:px-12 flex items-center dark:bg-black/40 bg-white/80 border-b border-zinc-200/50 dark:border-zinc-800/50">
-        <div class="max-w-7xl mx-auto w-full flex items-center justify-between" dir="ltr">
-            <div class="flex items-center gap-4">
-                <button id="open-btn" class="md:hidden p-2 text-current hover:scale-110"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
-                
-                <button id="theme-btn" class="p-3 bg-white dark:bg-zinc-800 shadow-md border border-zinc-200 dark:border-zinc-700 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-700">
-                    <div id="icon-box" class="rotate-icon flex items-center justify-center">
-                        <svg id="sun" class="h-6 w-6 text-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/></svg>
-                        <svg id="moon" class="h-6 w-6 text-zinc-600 dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
-                    </div>
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/30 dark:bg-black/20 border-b border-slate-200 dark:border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-row items-center justify-between" dir="ltr">
+            <div class="text-2xl font-extrabold tracking-tight">Smart<span class="text-gradient font-black">Edu</span></div>
+            <div class="flex items-center gap-3">
+                <button onclick="toggleLang()" class="min-w-[110px] h-10 px-4 py-2 rounded-xl bg-main-gradient text-white font-bold text-sm shadow-lg hover:scale-105">
+                    <span id="langLabel">English</span>
                 </button>
-                <button id="lang-btn" class="px-5 py-2.5 bg-white dark:bg-zinc-800 shadow-md border border-zinc-200 dark:border-zinc-700 rounded-2xl text-xs font-black hover:bg-zinc-50 dark:hover:bg-zinc-700">EN</button>
+                <button onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/20">
+                    <span class="dark:hidden">🌙</span><span class="hidden dark:inline text-yellow-400">☀️</span>
+                </button>
             </div>
-            
-            <div id="nav-stack" class="flex items-center gap-10 flex-row-reverse">
-                <div id="logo" class="text-xl font-black text-red-600 tracking-tighter cursor-pointer hover:opacity-80 transition-opacity">EG إنجازات مصر</div>
-              <div class="hidden md:flex gap-6 text-[12px] font-bold text-zinc-500 dark:text-zinc-400">
-    <a href="#roads-section" data-i18n="nav_roads" class="hover:text-yellow-600 dark:hover:text-white transition-colors">الطرق والكباري</a>
-    <a href="#capital-section" data-i18n="nav_capital" class="hover:text-yellow-600 dark:hover:text-white transition-colors">العاصمة الإدارية</a>
-    <a href="#suez-section" data-i18n="nav_suez" class="hover:text-yellow-600 dark:hover:text-white transition-colors">قناة السويس</a>
-    <a href="#terror-section" data-i18n="nav_terror" class="hover:text-yellow-600 dark:hover:text-white transition-colors">مكافحة الإرهاب</a>
-    <a href="#health-section" data-i18n="nav_health" class="hover:text-yellow-600 dark:hover:text-white transition-colors">الصحة</a>
-    <a href="#social-section" data-i18n="nav_social" class="hover:text-yellow-600 dark:hover:text-white transition-colors">التكافل الاجتماعي</a>
-    <a href="#education-section" data-i18n="nav_education" class="hover:text-yellow-600 dark:hover:text-white transition-colors">التعليم</a>
-    <a href="#transport-section" data-i18n="nav_transport" class="hover:text-yellow-600 dark:hover:text-white transition-colors">النقل</a>
-</div>
+        </nav>
+    </header>
+
+    <main class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 -z-20 bg-white dark:bg-slate-950">
+            <div class="absolute inset-0 grid-pattern"></div>
+        </div>
+        <div class="absolute inset-0 -z-10 animate-pulse-slow [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,rgba(35,37,198,0.2)_70%,rgba(188,30,30,0.15)_100%)]"></div>
+        
+        <div class="max-w-4xl mx-auto px-5 text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-black leading-tight mb-8" data-ar="ارتقِ بدراستك إلى <br> <span class='text-gradient'>عصر الذكاء الاصطناعي</span>" data-en="Elevate Your Study to the <br> <span class='text-gradient'>AI Era</span>">
+                ارتقِ بدراستك إلى <br> <span class="text-gradient">عصر الذكاء الاصطناعي</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-12" data-ar="تعلم كيف تُسخّر أدوات الـ AI لمضاعفة إنتاجيتك وتطوير أسلوب تعلمك بذكاء." data-en="Learn how to harness AI tools to double your productivity.">
+                تعلم كيف تُسخّر أدوات الـ AI لمضاعفة إنتاجيتك وتطوير أسلوب تعلمك بذكاء.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#pomodoro" class="bg-main-gradient px-10 py-4 rounded-2xl text-white font-bold text-lg shadow-xl hover:-translate-y-2 transition-all" data-ar="ابدأ الآن" data-en="Start Now">ابدأ الآن</a>
+                <a href="#techniques" class="px-10 py-4 rounded-2xl border-2 border-slate-200 dark:border-white/10 font-bold text-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-all" data-ar="استكشف التقنيات" data-en="Explore Techniques">استكشف التقنيات</a>
             </div>
         </div>
-    </nav>
-
-    <main class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 overflow-hidden">
-        <div class="blur-bg gold-glow animate-float"></div>
-        <div class="blur-bg red-glow animate-float" style="animation-delay: -6s;"></div>
-        
-        <div id="badge" class="relative z-10 mb-8 px-5 py-2 rounded-full border border-red-500/30 bg-red-500/10 text-red-600 text-[11px] font-black tracking-[0.3em] uppercase">EG 2030</div>
-        
-        <h1 id="title" class="relative z-10 text-4xl md:text-[100px] font-black mb-8 tracking-tighter leading-[0.95] text-zinc-900 dark:text-white">مصر تبني المستقبل</h1>
-        
-        <p id="desc" class="relative z-10 max-w-2xl text-lg md:text-2xl text-zinc-500 dark:text-zinc-400 font-medium mb-16 opacity-80 leading-relaxed">رؤية مصر 2030 — تحويل التحديات إلى إنجازات واقعية تلمس حياة المواطن المصري.</p>
-        
-        <button class="relative z-10 bg-red-600 text-white px-14 py-5 rounded-2xl font-black text-lg shadow-2xl shadow-red-600/30 transition-all hover:scale-105 active:scale-95 hover:bg-red-700 flex items-center gap-4 group" onclick="location.href='#roads-section'">
-            <span id="cta">اكتشف الإنجازات</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rotate-180 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
-        </button>
     </main>
-<section id="achievements-container" class="py-24 space-y-32 overflow-hidden">
-    
-   <div id="roads-section" class="achievement-row flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_roads">شبكة الطرق والكباري</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="roads_long_desc">تم إنشاء شبكة طرق ومحاور جديدة بالكامل تربط محافظات مصر وتفتح آفاق التنمية.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="7000">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_km">طرق جديدة</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="934">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_bridge">كوبري ومحور</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="1000">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_tunnel">نفق</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/roads.jpg" class="w-full h-full object-cover" alt="Roads">
-    </div>
-</div>
 
-<div id="capital-section" class="achievement-row flex flex-col md:flex-row-reverse items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_capital">العاصمة الإدارية الجديدة</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="capital_long_desc">مدينة ذكية من الجيل الرابع تضم مراكز الحكم والإدارة وأيقونات معمارية عالمية.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="170">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_feddan">ألف فدان</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="385">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_meter">متر برج</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="6.5">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_million">مليون نسمة</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/capital.jpg" class="w-full h-full object-cover" alt="Capital">
-    </div>
-</div>
-
-<div id="suez-section" class="achievement-row flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_suez">قناة السويس الجديدة</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="suez_long_desc">ممر ملاحي عالمي يعزز مكانة مصر الاقتصادية ويقلل زمن عبور السفن.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="72">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_km">طول القناة</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="9.4">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_bill">مليار $ دخل</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="11">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_hours">ساعة عبور</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/suez.jpg" class="w-full h-full object-cover" alt="Suez Canal">
-    </div>
-</div>
-
-<div id="terror-section" class="achievement-row flex flex-col md:flex-row-reverse items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_terror">مكافحة الإرهاب</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="terror_long_desc">تحقيق الأمن والاستقرار في ربوع مصر وتنمية شاملة في سيناء.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="95">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_percent">انخفاض العمليات</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">2018</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="nav_terror">سيناء</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">EG</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_percent">تنمية شاملة</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/Army.png" class="w-full h-full object-cover" alt="Terrorism Control">
-    </div>
-</div>
-
-<div id="health-section" class="achievement-row flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_health">مبادرة 100 مليون صحة</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="health_long_desc">أكبر مسح طبي شامل في تاريخ البشرية للقضاء على فيروس C.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="100">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_million">مليون فحص</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">WHO</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_percent">شهادة دولية</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">C</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_percent">خالية من الفيروس</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/health.jpg" class="w-full h-full object-cover" alt="Health">
-    </div>
-</div>
-
-<div id="social-section" class="achievement-row flex flex-col md:flex-row-reverse items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_social">التكافل الاجتماعي</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="social_long_desc">تطوير الريف المصري وتقديم الدعم النقدي للأسر الأكثر احتياجاً.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="58">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_million">مليون مستفيد</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="4600">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_village">قرية</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="5">تكافل و كرامة</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_million">مليون أسرة</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/social.jpg" class="w-full h-full object-cover" alt="Social">
-    </div>
-</div>
-
-<div id="education-section" class="achievement-row flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_education">تطوير التعليم</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="edu_long_desc">بناء منظومة تعليمية عصرية تواكب متطلبات المستقبل وبنك المعرفة المصري.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="30000">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_Schools">مدارس مطورة</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="16">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_national_uni">جامعة أهلية</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">EKB</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_library">أكبر مكتبة رقمية</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/education.jpg" class="w-full h-full object-cover" alt="Education">
-    </div>
-</div>
-
-<div id="transport-section" class="achievement-row flex flex-col md:flex-row-reverse items-center gap-12 max-w-7xl mx-auto px-6 py-20" dir="rtl">
-    <div class="flex-1 space-y-6">
-        <h2 class="text-4xl font-black" data-i18n="nav_transport">تطوير النقل والمواصلات</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 text-lg" data-i18n="trans_long_desc">يشمل التطوير القطار الكهربائي السريع LRT والمونوريل وتحديث عربات السكك الحديدية والموانئ البحرية لتصبح مصر مركزًا لوجستيًا عالميًا.</p>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600 counter" data-target="2000">0</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="unit_km">كم سكك حديدية</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">LRT</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="nav_transport">القطار الكهربائي</div>
-            </div>
-            <div class="stat-card bg-white dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/50 text-center">
-                <div class="text-2xl font-black text-red-600">Monorail</div>
-                <div class="text-[10px] font-bold opacity-60 uppercase" data-i18n="nav_transport">المونوريل</div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-1 rounded-[40px] overflow-hidden shadow-2xl bg-zinc-200 dark:bg-zinc-800 h-[350px]">
-        <img src="Images/transport.jpg" class="w-full h-full object-cover" alt="Transport">
-    </div>
-</div>
-    </section>
-    <button id="backToTop" class="fixed bottom-8 left-8 z-[150] bg-yellow-600 text-white p-4 rounded-2xl shadow-2xl shadow-red-600/40 translate-y-20 opacity-0 transition-all duration-500 hover:scale-110 active:scale-95 group">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7" />
-    </svg>
-    <span class="absolute bottom-full mb-3 right-0 bg-zinc-900 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap" data-i18n="go_up">للأعلى</span>
-</button>
-<footer class="relative mt-32 bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-800 pt-20 pb-10 overflow-hidden">
-    <div class="blur-bg red-glow opacity-5 w-[300px] h-[300px] -bottom-20 -right-20"></div>
-
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            
-            <div class="col-span-1 md:col-span-1 space-y-6">
-                <div class="text-2xl font-black text-red-600 tracking-tighter" data-i18n="logo">EG إنجازات مصر</div>
-                <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed" data-i18n="desc">
-                    رؤية مصر 2030 — تحويل التحديات إلى إنجازات واقعية تلمس حياة المواطن المصري.
-                </p>
-            </div>
-
-            <div class="col-span-1">
-                <h3 class="font-bold mb-6 text-zinc-900 dark:text-white uppercase tracking-wider text-xs" data-i18n="quick_links">روابط سريعة</h3>
-                <ul class="space-y-4 text-sm text-zinc-500 dark:text-zinc-400">
-                    <li><a href="#roads-section" class="hover:text-red-600 transition-colors" data-i18n="nav_roads">الطرق والكباري</a></li>
-                    <li><a href="#capital-section" class="hover:text-red-600 transition-colors" data-i18n="nav_capital">العاصمة الإدارية</a></li>
-                    <li><a href="#education-section" class="hover:text-red-600 transition-colors" data-i18n="nav_education">تطوير التعليم</a></li>
-                </ul>
-            </div>
-
-            <div class="col-span-1">
-                <h3 class="font-bold mb-6 text-zinc-900 dark:text-white uppercase tracking-wider text-xs" data-i18n="moe_title">وزارة التربية والتعليم</h3>
-                <ul class="space-y-4 text-sm text-zinc-500 dark:text-zinc-400">
-                    <li>
-                        <a href="https://moe.gov.eg" target="_blank" class="flex items-center gap-2 hover:text-red-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18" /></svg>
-                            <span data-i18n="moe_site">الموقع الرسمي</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-span-1">
-                <h3 class="font-bold mb-6 text-zinc-900 dark:text-white uppercase tracking-wider text-xs" data-i18n="social_moe">تابع الوزارة</h3>
-                <div class="flex gap-4">
-                    <a href="https://www.facebook.com/egypt.moe" target="_blank" class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.youtube.com/@MoEEgyptEduStream" target="_blank" class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
+    <section id="pomodoro" class="relative py-24 overflow-hidden border-t border-slate-200 dark:border-white/10 pattern-pomodoro animate-pattern">
+        <div class="max-w-4xl mx-auto px-5 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black mb-12" data-ar="ساعة <span class='text-gradient'>البومودورو</span>" data-en="The <span class='text-gradient'>Pomodoro</span> Timer">ساعة <span class="text-gradient">البومودورو</span></h2>
+            <div class="bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-10 rounded-3xl shadow-xl">
+                <div id="timerDisplay" class="text-8xl md:text-9xl font-black mb-10 text-slate-900 dark:text-white">25:00</div>
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <button onclick="setTimer(25)" class="px-6 py-2 rounded-xl bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 hover:bg-primary hover:text-white transition-all font-bold" data-ar="25 دقيقة" data-en="25 Min">25 دقيقة</button>
+                    <button onclick="setTimer(45)" class="px-6 py-2 rounded-xl bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 hover:bg-accent hover:text-white transition-all font-bold" data-ar="45 دقيقة" data-en="45 Min">45 دقيقة</button>
+                </div>
+                <div class="flex justify-center gap-6">
+                    <button onclick="toggleTimer()" class="w-16 h-16 rounded-full bg-main-gradient flex items-center justify-center text-white hover:scale-110 shadow-lg transition-all"><i data-lucide="play" id="playIcon"></i></button>
+                    <button onclick="resetTimer()" class="w-16 h-16 rounded-full bg-slate-200 dark:bg-white/10 flex items-center justify-center hover:bg-slate-300 transition-all"><i data-lucide="refresh-cw"></i></button>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="pt-8 border-t border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-            <p data-i18n="copyright">© 2026 إنجازات الدولة المصرية - رؤية وطن. جميع الحقوق محفوظة.</p>
+    <section id="techniques" class="relative py-24 pattern-techniques bg-slate-50 dark:bg-transparent overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6" 
+                data-ar="تقنيات دراسية <span class='text-gradient'>مدعومة بالذكاء الاصطناعي</span>" 
+                data-en="Study Techniques <span class='text-gradient'>Powered by AI</span>">
+                تقنيات دراسية <span class="text-gradient">مدعومة بالذكاء الاصطناعي</span>
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+               data-ar="استخدم أشهر المنهجيات العلمية في التعلم وطورها باستخدام أدوات الذكاء الاصطناعي."
+               data-en="Use the most famous scientific learning methodologies and enhance them with AI tools.">
+                استخدم أشهر المنهجيات العلمية في التعلم وطورها باستخدام أدوات الذكاء الاصطناعي.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+
+            <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-accent/50 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl">
+                <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white group-hover:rotate-6 transition-all duration-500">
+                    <i data-lucide="message-square-quote" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white" 
+                    data-ar="تقنية فاينمان" data-en="Feynman Technique">
+                    تقنية فاينمان
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed" 
+                    data-ar="أفضل طريقة للفهم هي الشرح. حاول شرح مفهوم معقد لـ AI Chatbot بتبسيط شديد، واطلب منه تقييم مدى دقة شرحك." 
+                    data-en="The best way to understand is to explain. Try explaining a complex concept to an AI Chatbot simply, and ask it to evaluate your accuracy.">
+                    أفضل طريقة للفهم هي الشرح. حاول شرح مفهوم معقد لـ AI Chatbot بتبسيط شديد، واطلب منه تقييم مدى دقة شرحك.
+                </p>
+            </div>
+
+            <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl">
+    <div class="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-500">
+        <i data-lucide="file-check-2" class="w-8 h-8"></i>
+    </div>
+    <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white" 
+        data-ar="المحاكاة الاختبارية" data-en="Exam Simulation">
+        المحاكاة الاختبارية
+    </h3>
+    <p class="text-slate-600 dark:text-slate-400 leading-relaxed" 
+        data-ar="حول منهجك إلى اختبارات تفاعلية. اطلب من الذكاء الاصطناعي تمثيل دور ممتحن يقوم بتقييم إجاباتك ويوضح لك مواطن القوة والضعف بدقة." 
+        data-en="Turn your curriculum into interactive exams. Ask AI to play the role of an examiner who evaluates your answers and highlights strengths and weaknesses.">
+        حول منهجك إلى اختبارات تفاعلية. اطلب من الذكاء الاصطناعي تمثيل دور ممتحن يقوم بتقييم إجاباتك ويوضح لك مواطن القوة والضعف بدقة.
+    </p>
+</div>
+
+            <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl">
+                <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-8 group-hover:bg-emerald-500 group-hover:text-white group-hover:rotate-6 transition-all duration-500">
+                    <i data-lucide="calendar-range" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white" 
+                    data-ar="التكرار المتباعد" data-en="Spaced Repetition">
+                    التكرار المتباعد
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed" 
+                    data-ar="حارب منحنى النسيان عبر مراجعة المعلومات على فترات متباعدة. استخدم الـ AI لتنظيم جدول مراجعة ذكي مخصص لك." 
+                    data-en="Fight the forgetting curve by reviewing info at intervals. Use AI to organize a smart, personalized review schedule.">
+                    حارب منحنى النسيان عبر مراجعة المعلومات على فترات متباعدة. استخدم الـ AI لتنظيم جدول مراجعة ذكي مخصص لك.
+                </p>
+            </div>
         </div>
     </div>
-</footer>
-<script>
-    // وظيفة العداد الذكي
-    const observerOptions = {
-        threshold: 0.5
-    };
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const goal = parseFloat(target.getAttribute('data-target'));
-                let count = 0;
-                const speed = 2000 / goal; // سرعة العداد (2 ثانية)
+    
+</section>
+    <section id="schedule" class="relative py-24 overflow-hidden pattern-schedule">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16" data-ar="الجدول الدراسي <span class='text-gradient'>المثالي</span>" data-en="The Ideal <span class='text-gradient'>Study Schedule</span>">الجدول الدراسي <span class="text-gradient">المثالي</span></h2>
+            
+            <div class="relative before:absolute before:inset-0 before:ml-auto before:-mr-[2px] md:before:mx-auto before:h-full before:w-[2px] before:bg-gradient-to-b before:from-primary before:to-transparent">
+                
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-orange-500 shadow-lg z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110"><i data-lucide="sunrise" class="text-white"></i></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white/90 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
+                        <time class="font-black text-orange-500 block mb-1">06:00 AM</time>
+                        <h4 class="text-xl font-bold" data-ar="الاستيقاظ والنشاط" data-en="Wake up & Activity">الاستيقاظ والنشاط</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-ar="بداية اليوم بتمارين خفيفة وتنظيم المهام باستخدام AI Planner وتحديد أهداف اليوم." data-en="Start the day with light exercise and organizing tasks using AI Planner and setting daily goals.">بداية اليوم بتمارين خفيفة وتنظيم المهام باستخدام AI Planner وتحديد أهداف اليوم.</p>
+                    </div>
+                </div>
 
-                const updateCount = () => {
-                    count += goal / 100;
-                    if (count < goal) {
-                        target.innerText = Math.ceil(count).toLocaleString() + (goal > 1000 ? '+' : '');
-                        setTimeout(updateCount, 20);
-                    } else {
-                        target.innerText = goal.toLocaleString() + (goal >= 1000 ? '+' : '');
-                    }
-                };
-                updateCount();
-                observer.unobserve(target);
-            }
-        });
-    }, observerOptions);
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500 shadow-lg z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110"><i data-lucide="brain" class="text-white"></i></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white/90 dark:bg-white/5 border-l-4 border-blue-500 border border-slate-200 dark:border-white/10 shadow-sm">
+                        <time class="font-black text-blue-500 block mb-1">07:30 AM - 10:00 AM</time>
+                        <h4 class="text-xl font-bold" data-ar="مذاكرة المواد العلمية" data-en="Scientific Study">مذاكرة المواد العلمية</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-ar="استخدام تقنية Feynman لشرح الدروس الصعبة لمساعد ذكي لاكتشاف فجوات الفهم وتصحيحها." data-en="Using Feynman technique to explain difficult lessons to an AI assistant to discover and fix understanding gaps.">استخدام تقنية Feynman لشرح الدروس الصعبة لمساعد ذكي لاكتشاف فجوات الفهم وتصحيحها.</p>
+                    </div>
+                </div>
 
-    document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
-</script>
-    <script>
-   const dict = {
-    ar: { 
-        logo: "EG إنجازات مصر", 
-        title: "مصر تبني المستقبل", 
-        desc: "رؤية مصر 2030 — تحويل التحديات إلى إنجازات واقعية تلمس حياة المواطن المصري.", 
-        btn: "EN", 
-        cta: "اكتشف الإنجازات",
-        nav_roads: "الطرق والكباري", 
-        nav_capital: "العاصمة الإدارية", 
-        nav_suez: "قناة السويس", 
-        nav_terror: "مكافحة الإرهاب", 
-        nav_health: "الصحة", 
-        nav_social: "التكافل الاجتماعي", 
-        nav_education: "التعليم", 
-        nav_transport: "النقل",
-        edu_long_desc: "تشمل خطة تطوير التعليم إنشاء الجامعات الأهلية والتكنولوجية الجديدة، وتطوير المناهج الدراسية، وإطلاق بنك المعرفة المصري كأكبر مكتبة رقمية.",
-        unit_Schools: "مدارس مطورة",
-        unit_national_uni: "جامعة أهلية",
-        unit_library: "مكتبة رقمية",
-        quick_links: "روابط سريعة",
-        moe_title: "وزارة التربية والتعليم",
-        moe_site: "الموقع الرسمي",
-        social_moe: "تابع الوزارة",
-        privacy: "سياسة الخصوصية",
-        terms: "الشروط والأحكام",
-        go_up: "للأعلى",
-        // السطر الجديد اللي طلبته
-        copyright: "© 2026 إنجازات الدولة المصرية - رؤية وطن. جميع الحقوق محفوظة.",
-        unit_km: "كم طرق", unit_bridge: "كوبري", unit_tunnel: "نفق", unit_feddan: "ألف فدان", 
-        unit_meter: "متر برج", unit_million: "مليون نسمة", unit_hours: "ساعة عبور", 
-        unit_bill: "مليار $", unit_percent: "انخفاض", unit_village: "قرية",
-        roads_long_desc: "تم إنشاء شبكة طرق ومحاور جديدة بالكامل تربط محافظات مصر وتفتح آفاق التنمية.",
-        capital_long_desc: "مدينة ذكية من الجيل الرابع تضم مراكز الحكم والإدارة وأيقونات معمارية عالمية.",
-        suez_long_desc: "ممر ملاحي عالمي يعزز مكانة مصر الاقتصادية ويقلل زمن عبور السفن.",
-        terror_long_desc: "تحقيق الأمن والاستقرار في ربوع مصر وتنمية شاملة في سيناء.",
-        health_long_desc: "أكبر مسح طبي شامل في تاريخ البشرية للقضاء على فيروس C.",
-        social_long_desc: "تطوير الريف المصري وتقديم الدعم النقدي للأسر الأكثر احتياجاً.",
-        trans_long_desc: "يشمل التطوير القطار الكهربائي السريع LRT والمونوريل وتحديث السكك الحديدية."
-    },
-    en: { 
-        logo: "EG EGYPT", 
-        title: "Egypt Builds Future", 
-        desc: "Vision 2030 — Transforming challenges into reality for every Egyptian.", 
-        btn: "عربي", 
-        cta: "Explore Now",
-        nav_roads: "Roads", 
-        nav_capital: "New Capital", 
-        nav_suez: "Suez Canal", 
-        nav_terror: "Security", 
-        nav_health: "Health", 
-        nav_social: "Solidarity", 
-        nav_education: "Education", 
-        nav_transport: "Transport",
-        edu_long_desc: "Developing education through new technological universities, curriculum updates, and the Egyptian Knowledge Bank digital library.",
-        unit_Schools: "Developed Schools",
-        unit_national_uni: "National Universities",
-        unit_library: "Digital Library",
-        quick_links: "Quick Links",
-        moe_title: "Ministry of Education",
-        moe_site: "Official Website",
-        social_moe: "Follow MOE",
-        privacy: "Privacy Policy",
-        terms: "Terms & Conditions",
-        go_up: "Go Up",
-        // الترجمة الإنجليزية للحقوق
-        copyright: "© 2026 Egyptian State Achievements - Nation's Vision. All Rights Reserved.",
-        unit_km: "KM Roads", unit_bridge: "Bridges", unit_tunnel: "Tunnels", unit_feddan: "K Feddan", 
-        unit_meter: "M Tower", unit_million: "M People", unit_hours: "Hours", 
-        unit_bill: "Billion $", unit_percent: "Decrease", unit_village: "Villages",
-        roads_long_desc: "A comprehensive road network connecting Egypt's governorates.",
-        capital_long_desc: "A 4th generation smart city housing government centers.",
-        suez_long_desc: "A global waterway boosting Egypt's economy.",
-        terror_long_desc: "Achieving security and stability in Sinai.",
-        health_long_desc: "The largest medical survey to eliminate Hepatitis C.",
-        social_long_desc: "Developing rural Egypt and supporting families.",
-        trans_long_desc: "Includes High-Speed Trains (LRT) and Monorail."
-    }
-};
-    const html = document.documentElement;
-    const sideMenu = document.getElementById('side-menu');
-    const overlay = document.getElementById('overlay');
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500 shadow-lg z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110"><i data-lucide="coffee" class="text-white"></i></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white/90 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
+                        <time class="font-black text-emerald-500 block mb-1">10:00 AM - 11:00 AM</time>
+                        <h4 class="text-xl font-bold" data-ar="فترة راحة وتغذية" data-en="Break & Nutrition">فترة راحة وتغذية</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-ar="وقت مستقطع لاستعادة النشاط الذهني والقيام ببعض تمارين التنفس لزيادة القدرة الاستيعابية." data-en="Break time to regain mental activity and perform breathing exercises to increase cognitive capacity.">وقت مستقطع لاستعادة النشاط الذهني والقيام ببعض تمارين التنفس لزيادة القدرة الاستيعابية.</p>
+                    </div>
+                </div>
 
-    // وظائف المنيو الجانبية بنعومة (Ease Transition)
-    const toggleMenu = (open) => {
-        if(open) {
-            overlay.classList.remove('hidden');
-            setTimeout(() => {
-                overlay.style.opacity = '1';
-                sideMenu.style.transform = 'translateX(0)';
-            }, 10);
-        } else {
-            overlay.style.opacity = '0';
-            sideMenu.style.transform = 'translateX(100%)';
-            setTimeout(() => overlay.classList.add('hidden'), 500);
-        }
-        document.body.style.overflow = open ? 'hidden' : '';
-    };
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-purple-500 shadow-lg z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110"><i data-lucide="languages" class="text-white"></i></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white/90 dark:bg-white/5 border-r-4 border-purple-500 border border-slate-200 dark:border-white/10 shadow-sm">
+                        <time class="font-black text-purple-500 block mb-1">11:00 AM - 01:30 PM</time>
+                        <h4 class="text-xl font-bold" data-ar="تطوير اللغات" data-en="Language Skills">تطوير اللغات</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-ar="ممارسة المحادثة مع AI Tutor لتقسين مهارات النطق بطلاقة واستيعاب القواعد اللغوية." data-en="Practicing conversation with an AI Tutor to improve fluency and grammar comprehension.">ممارسة المحادثة مع AI Tutor لتقسين مهارات النطق بطلاقة واستيعاب القواعد اللغوية.</p>
+                    </div>
+                </div>
 
-    document.getElementById('open-btn').onclick = () => toggleMenu(true);
-    document.getElementById('close-btn').onclick = () => toggleMenu(false);
-    overlay.onclick = () => toggleMenu(false);
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-red-500 shadow-lg z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110"><i data-lucide="check-square" class="text-white"></i></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white/90 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
+                        <time class="font-black text-accent block mb-1">04:00 PM - 06:00 PM</time>
+                        <h4 class="text-xl font-bold" data-ar="حل اختبارات ذكية" data-en="Smart Testing">حل اختبارات ذكية</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-ar="توليد اختبارات مخصصة بناءً على نقاط الضعف لتقييم المستوى الفعلي وضمان تغطية المنهج." data-en="Generating custom tests based on weak points to evaluate actual level and ensure curriculum coverage.">توليد اختبارات مخصصة بناءً على نقاط الضعف لتقييم المستوى الفعلي وضمان تغطية المنهج.</p>
+                    </div>
+                </div>
 
-    // تبديل المود (دارك/لايت) مع أنيميشن الأيقونة
-    let rotation = 0;
-    document.getElementById('theme-btn').onclick = () => {
-        rotation += 360;
-        document.getElementById('icon-box').style.transform = `rotate(${rotation}deg)`;
-        html.classList.toggle('dark');
-        html.classList.toggle('light');
-    };
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-slate-800 shadow-lg z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-transform group-hover:scale-110"><i data-lucide="moon" class="text-white"></i></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white/90 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
+                        <time class="font-black text-slate-500 block mb-1">10:00 PM</time>
+                        <h4 class="text-xl font-bold" data-ar="راحة تامة ونوم" data-en="Deep Rest & Sleep">راحة تامة ونوم</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-ar="إغلاق جميع الشاشات لضمان جودة نوم عميقة تساعد على تثبيت المعلومات التي تمت دراستها." data-en="Closing all screens to ensure deep sleep quality that helps consolidate the studied information.">إغلاق جميع الشاشات لضمان جودة نوم عميقة تساعد على تثبيت المعلومات التي تمت دراستها.</p>
+                    </div>
+                </div>
 
-    // تبديل اللغة مع الترجمة الشاملة لكل العناصر
-    document.getElementById('lang-btn').onclick = function() {
-        const isAr = html.dir === 'rtl';
-        const next = isAr ? 'en' : 'ar';
-        html.dir = isAr ? 'ltr' : 'rtl';
-        html.lang = next;
+            </div>
+        </div>
+    </section>
 
-        // 1. تحديث نصوص العناصر الأساسية بالـ ID
-        this.innerText = dict[next].btn;
-        if(document.getElementById('logo')) document.getElementById('logo').innerText = dict[next].logo;
-        if(document.getElementById('title')) document.getElementById('title').innerText = dict[next].title;
-        if(document.getElementById('desc')) document.getElementById('desc').innerText = dict[next].desc;
-        if(document.getElementById('cta')) document.getElementById('cta').innerText = dict[next].cta;
+    <footer class="relative bg-white dark:bg-darkBg py-16 border-t border-slate-200 dark:border-white/10 pattern-hero">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-right">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-black text-gradient" data-ar="مصر الرقمية" data-en="Digital Egypt">مصر الرقمية</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed" 
+                       data-ar="نحو تحول رقمي متكامل يخدم جميع قطاعات المجتمع المصري من خلال دمج تقنيات الذكاء الاصطناعي في التعليم لتطوير مهارات الطلاب." 
+                       data-en="Towards an integrated digital transformation serving all sectors of Egyptian society by integrating AI in education.">
+                        نحو تحول رقمي متكامل يخدم جميع قطاعات المجتمع المصري من خلال دمج تقنيات الذكاء الاصطناعي في التعليم لتطوير مهارات الطلاب.
+                    </p>
+                    <div class="flex gap-4 items-center">
+                        <a href="https://www.facebook.com/egypt.moe" target="_blank" class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i data-lucide="facebook"></i></a>
+                        <a href="https://moe.gov.eg/" target="_blank" class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 hover:bg-amber-500 hover:text-white transition-all"><i data-lucide="earth"></i></a>
+                        <a href="https://www.youtube.com/@MoEEgyptEduStream" target="_blank" class="w-10 h-10 rounded-xl bg-red-600/10 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+                    <ul class="space-y-4 text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-primary transition-colors" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="#pomodoro" class="hover:text-primary transition-colors" data-ar="ساعة التركيز" data-en="Focus Timer">ساعة التركيز</a></li>
+                        <li><a href="#techniques" class="hover:text-primary transition-colors" data-ar="تقنيات الدراسة" data-en="Study Techniques">تقنيات الدراسة</a></li>
+                        <li><a href="#schedule" class="hover:text-primary transition-colors" data-ar="الجدول الدراسي" data-en="Schedule">الجدول الدراسي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- <h3 class="text-xl font-bold mb-6" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Mohamed.2407653@emp.moe.edu.eg</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm" data-ar="إدارة تنمية مادة الكمبيوتر التعليمي - وزارة التربية والتعليم" data-en="Computer Education Dept - Ministry of Education">إدارة تنمية مادة الكمبيوتر التعليمي - وزارة التربية والتعليم</p>
+                </div> -->
+            </div>
+            <div class="border-t border-slate-200 dark:border-white/10 mt-12 pt-8 text-center text-slate-500 text-sm">
+                © 2025 <span data-ar="مسابقة البرمجة و الذكاء ألإصطناعي الرقمية" data-en="Programming and AI Competition">مسابقة البرمجة و الذكاء الإصطناعي</span>. 
+                <span data-ar="جميع الحقوق محفوظة " data-en="All rights reserved  ">جميع الحقوق محفوظة </span>.
+            </div>
+        </div>
+    </footer>
 
-        // 2. تحديث كل روابط الـ Nav والمنيو اللي فيها data-i18n
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (dict[next][key]) {
-                el.innerText = dict[next][key];
-            }
-        });
-
-        // 3. عكس اتجاه الـ Navbar
-        document.getElementById('nav-stack').classList.toggle('flex-row-reverse');
-        toggleMenu(false);
-    };
-    const backToTopBtn = document.getElementById('backToTop');
-
-// مراقبة السكرول
-window.onscroll = () => {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        // إظهار الزرار
-        backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
-        backToTopBtn.classList.add('translate-y-0', 'opacity-100');
-    } else {
-        // إخفاء الزرار
-        backToTopBtn.classList.add('translate-y-20', 'opacity-0');
-        backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
-    }
-};
-
-// وظيفة الصعود للأعلى بنعومة
-backToTopBtn.onclick = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
-</script>
-
- 
-
+    <script src="https://unpkg.com/lucide@latest"></script>
+   <script src="functions.js"></script>
 </body>
 </html>
